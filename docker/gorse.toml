@@ -1,0 +1,16 @@
+[server]
+host = "0.0.0.0"
+port = 5050
+
+[database]
+file = "/root/data/gorse.db"
+
+[recommend]
+model = "bpr"
+cache_size = 100
+update_threshold = 5
+check_period = 1
+similarity = "implicit"
+
+[params]
+n_epochs = 100
