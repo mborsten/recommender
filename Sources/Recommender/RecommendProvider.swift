@@ -9,7 +9,7 @@ import Vapor
 
 extension Application {
 
-    var recommendConfig: RecommendConfig? {
+    public var recommendConfig: RecommendConfig? {
         get {
             self.storage[RecommendConfigKey.self]
         }
@@ -22,7 +22,7 @@ extension Application {
 
 extension Request {
 
-    var recommend: Recommend {
+    public var recommend: Recommend {
         .init(request: self, config: application.storage[RecommendConfigKey.self] ?? RecommendConfig())
     }
 
