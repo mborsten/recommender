@@ -6,7 +6,7 @@ A recommender service for Vapor, using the [gorse](https://gorse.io) recommender
 Added Recommender to your `Package.swift`
 
 ```swift
-.package(url: "https://github.com/mborsten/recommender-vapor.git", from: "0.0.1-alpha"),
+.package(url: "https://github.com/mborsten/recommender-vapor.git", from: "0.0.1-alpha1"),
 ```
 
 # Usage
