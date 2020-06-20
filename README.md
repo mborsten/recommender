@@ -1,4 +1,4 @@
-# recommender-vapor
+# Recommender for Vapor
 A recommender service for Vapor, using the [gorse](https://gorse.io) recommender system
 
 #Getting started
