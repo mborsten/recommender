@@ -50,3 +50,11 @@ protected.post("items", "recommended") {
   return Item.recommended(req: request, userId: try user.requireID())
 }
 ```
+
+#Todo
+
+Add the following queries:
+• Popular items
+• Latest items
+• Random items
+• Similar items
