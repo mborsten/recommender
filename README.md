@@ -45,7 +45,7 @@ To retrieve a list of recommended items
 
 ```swift
 let protected = routes.grouped(User.authenticator())
-protected.post("items", "recommended") {
+protected.get("items", "recommended") {
   let user = try request.auth.require(User.self)
   return Item.recommended(req: request, userId: try user.requireID())
 }
