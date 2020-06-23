@@ -148,16 +148,8 @@ extension Recommend {
         .transform(to: ())
     }
 
-    //TODO: use getIds
     func recommendedIdsFor(userId: String) -> EventLoopFuture<[String]> {
-        return request
-            .client
-            .get(recommendedURI(userId: userId))
-            .flatMapThrowing { res -> [Recommend.Item] in
-                return try res.content.decode([Item].self)
-        }.map { items in
-            items.map{ $0.id }
-        }
+        return getIds(forURI: recommendedURI(userId: userId))
     }
 
     func popularIds(number: Int) -> EventLoopFuture<[String]> {
