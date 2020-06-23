@@ -14,13 +14,16 @@ public struct RecommendConfig {
         case https = "https"
     }
 
-    ///
+    /// The scheme that should be used for the gorse service.
+    /// Default is `http`
     let scheme: Scheme = .http
 
-    ///
+    /// The hostname of the gorse service. This can be a hostname
+    /// or ip address. Default is "0.0.0.0"
     let host = "0.0.0.0"
 
-    ///
+    /// The port that should be used for the gorse service. Default
+    /// is 5050
     let port = 5050
 
 }
