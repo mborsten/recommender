@@ -1,7 +1,7 @@
 # Recommender for Vapor
 A recommender service for Vapor, using the [gorse](https://gorse.io) recommender system
 
-#Getting started
+# Getting started
 
 Added Recommender to your `Package.swift`
 
