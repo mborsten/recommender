@@ -51,11 +51,17 @@ protected.get("items", "recommended") {
 }
 ```
 
+Retrieve a list of popular items
+```swift
+routes.get("items", "popular") {
+  return Item.popular(req: Request, number: 10)
+}
+```
+
 # Todo
 
 Add the following queries:
 
-  * Popular items
   * Latest items
   * Random items
   * Similar items
