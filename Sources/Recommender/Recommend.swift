@@ -97,6 +97,13 @@ public struct Recommend {
         return uri
     }
 
+    private func popularURI(number: Int) -> URI {
+        var uri = self.uri
+        uri.path = "/popular"
+        uri.query = "number=\(number)"
+        return uri
+    }
+
 }
 
 extension Recommend {
@@ -141,10 +148,26 @@ extension Recommend {
         .transform(to: ())
     }
 
+    //TODO: use getIds
     func recommendedIdsFor(userId: String) -> EventLoopFuture<[String]> {
         return request
             .client
             .get(recommendedURI(userId: userId))
+            .flatMapThrowing { res -> [Recommend.Item] in
+                return try res.content.decode([Item].self)
+        }.map { items in
+            items.map{ $0.id }
+        }
+    }
+
+    func popularIds(number: Int) -> EventLoopFuture<[String]> {
+        return getIds(forURI: popularURI(number: number))
+    }
+
+    private func getIds(forURI uri: URI) -> EventLoopFuture<[String]> {
+        return request
+            .client
+            .get(uri)
             .flatMapThrowing { res -> [Recommend.Item] in
                 return try res.content.decode([Item].self)
         }.map { items in
