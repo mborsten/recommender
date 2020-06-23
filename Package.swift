@@ -20,9 +20,6 @@ let package = Package(
         ]),
         .testTarget(name: "RecommenderTests", dependencies: [
             .target(name: "Recommender"),
-        ]),
-        .target(name: "RecommenderExample", dependencies: [
-            .target(name: "Recommender"),
-        ]),
+        ])
     ]
 )
